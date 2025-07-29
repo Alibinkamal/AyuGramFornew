@@ -9920,3 +9920,12 @@ HistoryWidget::~HistoryWidget() {
 	_subsectionTabs = nullptr;
 	setTabbedPanel(nullptr);
 }
+void HistoryWidget::exportToPdf() {
+    QPrinter printer(QPrinter::HighResolution);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName("chat_export.pdf");
+
+    QPainter painter(&printer);
+    this->render(&painter);
+    painter.end();
+}
