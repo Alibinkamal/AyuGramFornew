@@ -141,6 +141,8 @@ public:
 		not_null<Window::SessionController*> controller);
 
 	void historyLoaded();
+        void exportToPdf();
+
 
 	[[nodiscard]] bool preventsClose(Fn<void()> &&continueCallback) const;
 
